@@ -1,11 +1,7 @@
 $(document).ready(function () {
-
     setTimeout(function () {
         $("#playIcon").show();
     }, 2700);
-    $("#overlay").animate({
-        opacity: "0.6"
-    }, 2600, "swing");
     $("#playbtn>img").fadeIn("slow");
     $("#playbtn").one("click", function () {
         $("video").trigger("play");
