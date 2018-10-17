@@ -9,7 +9,7 @@ $(document).ready(function () {
     $("#playbtn>img").fadeIn("slow");
     var video = document.getElementById("hero-video");
     video.addEventListener('loadeddata', function () {
-        alert("loaded")
+        alert("loaded");
         $("#playbtn").one("click", function () {
             $("#playbtn>img")
                 .fadeOut(400)
