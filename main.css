@@ -46,7 +46,7 @@ video,
   top: 0;
 }
 
-img {
+#playbtn>img {
   display: block;
   height: 100%;
   margin: 0 auto;
