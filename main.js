@@ -9,6 +9,8 @@ $(document).ready(function () {
     $("#playbtn>img").fadeIn("slow");
     $("#playbtn").one("click", function () {
         $("video").trigger("play");
+        $("#playIcon").hide();
+        $("#loadIcon").show();
     });
     var video = document.getElementById("hero-video");
     video.addEventListener('playing', function () {
