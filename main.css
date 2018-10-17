@@ -34,7 +34,7 @@ a {
 }
 
 video,
-#cover-img {
+#bg-img {
   margin: 0 auto;
   left: 50%;
   position: absolute;
@@ -72,7 +72,9 @@ a:hover {
 
 
 @media only screen and (max-width: 1400px) {
-  video {
+
+  video,
+  #bg-img {
     width: auto !important;
     height: 100vh !important;
     min-height: 790px !important;
@@ -80,7 +82,9 @@ a:hover {
 }
 
 @media only screen and (max-height: 400px) {
-  video {
+
+  video,
+  #bg-img {
     min-width: 100% !important;
     width: 100% !important;
     min-height: auto !important;
@@ -93,7 +97,9 @@ a:hover {
 }
 
 @media only screen and (max-width: 500px) {
-  video {
+
+  video,
+  #bg-img {
     width: auto !important;
     height: 100vh !important;
   }
