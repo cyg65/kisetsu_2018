@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var video = document.getElementById("hero-video");
+
     setTimeout(function () {
         $("#playIcon").show();
     }, 2700);
@@ -7,7 +7,9 @@ $(document).ready(function () {
         opacity: "0.6"
     }, 2600, "swing");
     $("#playbtn>img").fadeIn("slow");
+    var video = document.getElementById("hero-video");
     video.addEventListener('loadeddata', function () {
+        alert("loaded")
         $("#playbtn").one("click", function () {
             $("#playbtn>img")
                 .fadeOut(400)
@@ -27,5 +29,5 @@ $(document).ready(function () {
                 });
             $("#overlay").fadeTo("slow", 0);
         });
-    });
-}, false);
+    }, false);
+});
