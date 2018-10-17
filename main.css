@@ -72,7 +72,9 @@ a:hover {
   video {
     width: auto !important;
     height: 100% !important;
-
   }
 
+  .overlay {
+    display: none
+  }
 }
