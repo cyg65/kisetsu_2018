@@ -1,7 +1,11 @@
 $(document).ready(function () {
+
     setTimeout(function () {
         $("#playIcon").show();
     }, 2700);
+    // $("#overlay").animate({
+    //     opacity: "0.6"
+    // }, 2600, "swing");
     $("#playbtn>img").fadeIn("slow");
     $("#playbtn").one("click", function () {
         $("video").trigger("play");
@@ -9,7 +13,7 @@ $(document).ready(function () {
         $("#loadIcon").show();
     });
     var video = document.getElementById("hero-video");
-    video.addEventListener('playing', function () {
+    video.addEventListener('canplaythrough', function () {
         $("#playbtn>img")
             .fadeOut(400)
             .fadeIn("slow");
