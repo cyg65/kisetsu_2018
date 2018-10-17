@@ -13,7 +13,7 @@ $(document).ready(function () {
         $("#loadIcon").show();
     });
     var video = document.getElementById("hero-video");
-    video.addEventListener('canplaythrough', function () {
+    video.addEventListener('play', function () {
         $("#playbtn>img")
             .fadeOut(400)
             .fadeIn("slow");

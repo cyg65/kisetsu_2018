@@ -1,7 +1,6 @@
 body,
 html,
-.vidcontainer,
-#overlay {
+.vidcontainer {
   height: 100% !important;
   width: 100% !important;
   margin: 0;
@@ -10,8 +9,7 @@ html,
   color: #aa8ea6
 }
 
-.vidcontainer,
-#overlay {
+.vidcontainer {
   overflow: hidden;
 }
 
@@ -25,11 +23,6 @@ a {
   margin: 0 auto;
   text-align: center;
   font-size: 1.5em;
-}
-
-#overlay {
-  position: absolute;
-  z-index: 2;
 }
 
 video,
@@ -100,9 +93,5 @@ a:hover {
   #bg-img {
     width: auto !important;
     height: 100vh !important;
-  }
-
-  #overlay {
-    display: none
   }
 }
