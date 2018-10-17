@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     setTimeout(function () {
         $("#playIcon").show();
     }, 2700);
@@ -7,7 +6,7 @@ $(document).ready(function () {
     //     opacity: "0.6"
     // }, 2600, "swing");
     $("#playbtn>img").fadeIn("slow");
-    $("#playbtn").one("click", function () {
+    $("#playbtn").one("click touchstart", function () {
         $("video").trigger("play");
         $("#playIcon").hide();
         $("#loadIcon").show();
