@@ -1,22 +1,24 @@
-$(document).ready(function () {
-    setTimeout(function () {
+$(document).ready(() => {
+    setTimeout(() => {
         $("#playIcon").show();
     }, 2700);
     // $("#overlay").animate({
     //     opacity: "0.6"
     // }, 2600, "swing");
     $("#playbtn>img").fadeIn("slow");
-    $("#playbtn").one("click touchstart", function () {
-        $("video").trigger("play");
+    $("#playbtn").one("click touchstart", () => {
+        setTimeout(() => {
+            $("video").trigger("play");
+        }, 5000);
         $("#playIcon").hide();
         $("#loadIcon").show();
     });
-    var video = document.getElementById("hero-video");
-    video.addEventListener('play', function () {
+    var $video = $("#hero-video");
+    $video[0].onplay = () => {
         $("#playbtn>img")
             .fadeOut(400)
             .fadeIn("slow");
-        setTimeout(function () {
+        setTimeout(() => {
             $("#playbtn>img").attr("src", "./assets/landingpage_kisetsu_2018.png");
         }, 400);
         $("#playbtn>p").hide();
@@ -28,7 +30,6 @@ $(document).ready(function () {
                 duration: 2700,
                 easing: "swing"
             });
-        $("#overlay").fadeTo("slow", 0);
-
-    }, false);
+        // $("#overlay").fadeTo("slow", 0);
+    };
 });
