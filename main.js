@@ -1,7 +1,7 @@
 $(document).ready(() => {
   playAnimation = () => {
     var $video = $("#hero-video");
-    videoElment = $video[0];
+    videoElement = $video[0];
     playAction = () => {
       $("#playbtn>img").fadeOut(400, () => {
         $("#playbtn>img")
@@ -19,7 +19,10 @@ $(document).ready(() => {
         });
     };
     $video.on('canplaythrough', playAction);
-    if (videoElment.readyState > 3) {
+    $video.on('ended', () => {
+      $video.fadeOut()
+    })
+    if (videoElement.readyState > 3) {
       playAction()
     }
   }
@@ -62,4 +65,16 @@ $(document).ready(() => {
       }
     });
   });
+
+  $('#natural').on('click touchstart', () => {
+    $('#bg-img').attr('src', './assets/kisetsu_2018_natural.jpg')
+  });
+  $('#dim').on('click touchstart', () => {
+    $('#bg-img').attr('src', './assets/kisetsu_2018_dim.jpg')
+  });
+  $('#studio').on('click touchstart', () => {
+    $('#bg-img').attr('src', './assets/kisetsu_2018_studio.jpg')
+  });
+  $('#studio').trigger('click');
+
 });
