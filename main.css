@@ -18,6 +18,16 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 0;
+  line-height: 1em;
+  padding: 0;
+}
+
+#lights>p {
+  margin-top: 1em
+}
+
 #playbtn>p {
   display: block;
   margin: 0 auto;
@@ -61,6 +71,29 @@ a:hover {
   opacity: 0.8;
 }
 
+#lights {
+  display: flex;
+  flex-direction: column;
+  font-size: 2em;
+  position: fixed;
+  top: 50%;
+  padding: 0 5px;
+  transform: translate(0, -50%);
+  right: 0;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  background: #fafafa34;
+  margin-right: 10%;
+  text-align: center;
+}
+
+.light-btn {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+}
+
 
 @media only screen and (max-width: 1400px) {
 
@@ -71,6 +104,7 @@ a:hover {
     min-height: 790px !important;
   }
 }
+
 
 @media only screen and (max-height: 400px) {
 
@@ -93,5 +127,9 @@ a:hover {
   #bg-img {
     width: auto !important;
     height: 100vh !important;
+  }
+
+  #lights {
+    margin-right: 0;
   }
 }

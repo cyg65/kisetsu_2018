@@ -36,4 +36,29 @@ $(document).ready(() => {
       );
     // $("#overlay").fadeTo("slow", 0);
   };
+  var $lightBtn = $(".light-btn");
+  disabled = false;
+  $lightBtn.each(function() {
+    $(this).on("click touchstart", function() {
+      $(this)
+        .addClass("active")
+        .siblings()
+        .removeClass("active")
+        .children("i")
+        .removeClass("fas")
+        .addClass("far");
+      $("i", this)
+        .addClass("fas")
+        .removeClass("far");
+    });
+
+    $(this).on("mouseover mouseout", function() {
+      if (!$(this).hasClass("active")) {
+        $(this)
+          .children("i")
+          .toggleClass("far")
+          .toggleClass("fas");
+      }
+    });
+  });
 });
