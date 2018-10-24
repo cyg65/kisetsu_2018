@@ -2,8 +2,8 @@ $(document).ready(() => {
   if (navigator.userAgent.match(/iphone|ipod|ipad/i)) {
     var elHeight = iosInnerHeight() + 5;
     $('.vidcontainer').height(elHeight)
+    $('#playbtn').css('top', '40%');
   }
-
   playAnimation = () => {
     var $video = $('#hero-video');
     videoElement = $video[0];
