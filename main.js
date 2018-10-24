@@ -1,4 +1,9 @@
 $(document).ready(() => {
+  if (navigator.userAgent.match(/iphone|ipod|ipad/i)) {
+    var elHeight = iosInnerHeight() + 5;
+    $('.vidcontainer').height(elHeight)
+  }
+
   playAnimation = () => {
     var $video = $('#hero-video');
     videoElement = $video[0];
@@ -14,15 +19,12 @@ $(document).ready(() => {
       $('#playbtn>p').hide();
       $('#playbtn')
         .delay(800)
-        .animate(
-          {
-            top: '12%'
-          },
-          {
-            duration: 2700,
-            easing: 'swing'
-          }
-        );
+        .animate({
+          top: '12%'
+        }, {
+          duration: 2700,
+          easing: 'swing'
+        });
     };
 
     $video.on('canplaythrough', playAction);
@@ -49,9 +51,8 @@ $(document).ready(() => {
   });
 
   var $lightBtn = $('.light-btn');
-  disabled = false;
-  $lightBtn.each(function() {
-    $(this).on('click touchstart', function() {
+  $lightBtn.each(function () {
+    $(this).on('click touchstart', function () {
       $(this)
         .addClass('active')
         .siblings()
@@ -64,7 +65,7 @@ $(document).ready(() => {
         .removeClass('far');
     });
 
-    $(this).on('mouseover mouseout', function() {
+    $(this).on('mouseover mouseout', function () {
       if (!$(this).hasClass('active')) {
         $(this)
           .children('i')
@@ -74,7 +75,7 @@ $(document).ready(() => {
     });
   });
 
-  $('#natural').on('click touchstart', function() {
+  $('#natural').on('click touchstart', function () {
     $('#natural-img')
       .show()
       .siblings('img')
@@ -86,7 +87,7 @@ $(document).ready(() => {
         .css('z-index', -1);
     }, 601);
   });
-  $('#dim').on('click touchstart', function() {
+  $('#dim').on('click touchstart', function () {
     $('#dim-img')
       .show()
       .siblings('img')
@@ -98,7 +99,7 @@ $(document).ready(() => {
         .css('z-index', -1);
     }, 601);
   });
-  $('#studio').on('click touchstart', function() {
+  $('#studio').on('click touchstart', function () {
     $('#studio-img')
       .show()
       .siblings('img')
