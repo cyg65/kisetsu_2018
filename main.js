@@ -1,31 +1,16 @@
-// var d1 = $.Deferred();
-// var d2 = $.Deferred();
-
 function lightOptions(elName) {
   $('#' + elName + '-img')
     .show()
     .siblings('img')
-    .fadeOut(600).promise().done(function () {
+    .fadeOut(600)
+    .promise()
+    .done(function () {
       $('#' + elName + '-img')
         .css('z-index', 0)
         .siblings('img')
         .css('z-index', -1);
     });
 }
-
-// function lightOptions(elName) {
-//   $('#' + elName + '-img')
-//     .show()
-//     .siblings('img')
-//     .fadeOut(600);
-//   setTimeout(function () {
-//     $('#' + elName + '-img')
-//       .css('z-index', 0)
-//       .siblings('img')
-//       .css('z-index', -1);
-//   }, 601);
-// }
-
 $(document).ready(function () {
   if (navigator.userAgent.match(/iphone|ipod|ipad/i)) {
     var elHeight = iosInnerHeight() + 5;
@@ -72,6 +57,8 @@ $(document).ready(function () {
   }, 2000);
   $('#playbtn>img').fadeIn('slow');
   $('#playbtn').one('click touchstart', function () {
+    $(this).removeClass('hover');
+    $('#lights').fadeIn('slow');
     $('video').trigger('play');
     $('#playIcon').hide();
     $('#loadIcon').show();
