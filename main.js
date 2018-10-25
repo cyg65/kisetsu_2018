@@ -58,6 +58,7 @@ $(document).ready(function () {
   $('#playbtn>img').fadeIn('slow');
   $('#playbtn').one('click touchstart', function () {
     $(this).removeClass('hover');
+    $('#studio').trigger('click');
     $('#lights').fadeIn('slow');
     $('video').trigger('play');
     $('#playIcon').hide();
@@ -113,5 +114,4 @@ $(document).ready(function () {
   //       .css('z-index', -1);
   //   }, 601);
   // });
-  $('#studio').trigger('click');
 });

@@ -47,6 +47,10 @@ video,
   top: 0;
 }
 
+.bg-img {
+  display: none
+}
+
 video {
   background-image: url('./assets/kisetsu_2018_dim.jpg');
   background-size: cover;
