@@ -88,7 +88,7 @@ video {
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
-  background: #fafafa34;
+  /* background: #fafafa34; */
   margin-right: 10%;
   text-align: center;
 }

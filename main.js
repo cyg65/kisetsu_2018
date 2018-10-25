@@ -1,15 +1,45 @@
-$(document).ready(() => {
+// var d1 = $.Deferred();
+// var d2 = $.Deferred();
+
+function lightOptions(elName) {
+  $('#' + elName + '-img')
+    .show()
+    .siblings('img')
+    .fadeOut(600).promise().done(function () {
+      $('#' + elName + '-img')
+        .css('z-index', 0)
+        .siblings('img')
+        .css('z-index', -1);
+    });
+}
+
+// function lightOptions(elName) {
+//   $('#' + elName + '-img')
+//     .show()
+//     .siblings('img')
+//     .fadeOut(600);
+//   setTimeout(function () {
+//     $('#' + elName + '-img')
+//       .css('z-index', 0)
+//       .siblings('img')
+//       .css('z-index', -1);
+//   }, 601);
+// }
+
+$(document).ready(function () {
   if (navigator.userAgent.match(/iphone|ipod|ipad/i)) {
     var elHeight = iosInnerHeight() + 5;
     $('.vidcontainer').height(elHeight)
     $('#playbtn').css('top', '40%');
   }
-  playAnimation = () => {
+
+  function playAnimation() {
     var $video = $('#hero-video');
     videoElement = $video[0];
-    playAction = () => {
+
+    function playAction() {
       $('#playbtn>img')
-        .fadeOut(400, () => {
+        .fadeOut(400, function () {
           $('#playbtn>img').attr(
             'src',
             './assets/landingpage_kisetsu_2018.png'
@@ -25,25 +55,23 @@ $(document).ready(() => {
           duration: 2700,
           easing: 'swing'
         });
-    };
-
+    }
     $video.on('canplaythrough', playAction);
     if (videoElement.readyState > 3) {
       playAction();
     }
-
     $video.on('ended', () => {
       $video.fadeOut();
     });
   };
 
-  setInterval(() => {
+  setInterval(function () {
     $('#playIcon')
       .fadeTo(1000, 0.6)
       .fadeTo(1000, 1);
   }, 2000);
   $('#playbtn>img').fadeIn('slow');
-  $('#playbtn').one('click touchstart', () => {
+  $('#playbtn').one('click touchstart', function () {
     $('video').trigger('play');
     $('#playIcon').hide();
     $('#loadIcon').show();
@@ -74,42 +102,29 @@ $(document).ready(() => {
       }
     });
   });
-
-  $('#natural').on('click touchstart', function () {
-    $('#natural-img')
-      .show()
-      .siblings('img')
-      .fadeOut(600);
-    setTimeout(() => {
-      $('#natural-img')
-        .css('z-index', 0)
-        .siblings('img')
-        .css('z-index', -1);
-    }, 601);
-  });
-  $('#dim').on('click touchstart', function () {
-    $('#dim-img')
-      .show()
-      .siblings('img')
-      .fadeOut(600);
-    setTimeout(() => {
-      $('#dim-img')
-        .css('z-index', 0)
-        .siblings('img')
-        .css('z-index', -1);
-    }, 601);
-  });
-  $('#studio').on('click touchstart', function () {
-    $('#studio-img')
-      .show()
-      .siblings('img')
-      .fadeOut(600);
-    setTimeout(() => {
-      $('#studio-img')
-        .css('z-index', 0)
-        .siblings('img')
-        .css('z-index', -1);
-    }, 601);
-  });
+  // $('#dim').on('click touchstart', function () {
+  //   $('#dim-img')
+  //     .show()
+  //     .siblings('img')
+  //     .fadeOut(600);
+  //   setTimeout(() => {
+  //     $('#dim-img')
+  //       .css('z-index', 0)
+  //       .siblings('img')
+  //       .css('z-index', -1);
+  //   }, 601);
+  // });
+  // $('#studio').on('click touchstart', function () {
+  //   $('#studio-img')
+  //     .show()
+  //     .siblings('img')
+  //     .fadeOut(600);
+  //   setTimeout(() => {
+  //     $('#studio-img')
+  //       .css('z-index', 0)
+  //       .siblings('img')
+  //       .css('z-index', -1);
+  //   }, 601);
+  // });
   $('#studio').trigger('click');
 });

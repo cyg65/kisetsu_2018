@@ -17,8 +17,8 @@
 
 <body>
     <div class="vidcontainer">
-        <img id="dim-img" class="bg-img" src="./assets/kisetsu_2018_dim.jpg" />
         <img id="natural-img" class="bg-img" src="./assets/kisetsu_2018_natural.jpg" />
+        <img id="dim-img" class="bg-img" src="./assets/kisetsu_2018_dim.jpg" />
         <img id="studio-img" class="bg-img" src="./assets/kisetsu_2018_studio.jpg" />
         <div class="hover" id="playbtn"><img src="./assets/cdjb_logo.png">
             <p>
@@ -33,13 +33,18 @@
     </div>
 
     <div id="lights">
-        <div id="natural" class="light-btn" style="border-bottom: solid 0.5px #aa8ea68e"><i class="far fa-sun"></i>
+        <div style="font-size: 12px; border-bottom: solid 0.5px #aa8ea68e; cursor:default !important" class="light-btn">Lighting<br />
+            Options</div>
+        <div id="natural" onclick="lightOptions('natural')" ontouchstart="lightOptions('natural')" class="light-btn"
+            style="border-bottom: solid 0.5px #aa8ea68e"><i class="far fa-sun"></i>
             <p style="font-size: 12px">Natural</p>
         </div>
-        <div id="dim" class="light-btn" style="border-bottom: solid 0.5px #aa8ea68e"><i class="far fa-lightbulb"></i>
+        <div id="dim" onclick="lightOptions('dim')" ontouchstart="lightOptions('dim')" class="light-btn" style="border-bottom: solid 0.5px #aa8ea68e"><i
+                class="far fa-lightbulb"></i>
             <p style="font-size: 12px">Dim</p>
         </div>
-        <div id="studio" class="light-btn"><i class="far fa-eye"></i>
+        <div id="studio" onclick="lightOptions('studio')" ontouchstart="lightOptions('studio')" class="light-btn"><i
+                class="far fa-eye"></i>
             <p style="font-size: 12px">Studio</p>
         </div>
     </div>
